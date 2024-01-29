@@ -56,7 +56,6 @@ public class ActionTest {
         // TODO review the generated test code and remove the default call to fail.
        
     }
-
    
     public class ActionImpl extends Action {
 

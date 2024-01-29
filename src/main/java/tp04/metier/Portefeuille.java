@@ -16,7 +16,7 @@ public class Portefeuille {
     
     Map<Action, LignePortefeuille> mapLignes;
     
-    private class LignePortefeuille {
+    public class LignePortefeuille {
         
         private Action action;
         
@@ -69,6 +69,10 @@ public class Portefeuille {
     public String toString() {
         return this.mapLignes.toString();
     }
+    
+    public int getQte(Action a) {
+            return this.mapLignes.get(a).getQte();
+        }
 
     public float valeur(Jour j) {
         float total = 0;
