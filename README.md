@@ -1,9 +1,9 @@
 **URL Sonar** : https://sonarcloud.io/project/overview?id=cammirio_SharePortfolioIDA
 
 ### Groups : 
-* [Hind - Margaux] → hindmargaux
-* [My - Mai] → mymai
-* [Camille - Tessa - Camille] → camilletessacamille
+* [Hind - Camille] → hindcamille
+* [My - Margaux] → mymargaux
+* [Camille - Tessa] → camilletessa
 
 #### Pour changer de branche
 ```Dans NetBeans, clique droit sur le projet → Git → Branch/Tag → Switch to Branch 	```
