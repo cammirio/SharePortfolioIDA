@@ -17,6 +17,7 @@ public class ActionComposee extends Action {
     // attribut lien
     Map<ActionSimple, Float> mapPanier;
 
+  
     public ActionComposee(String libelle) {
         super(libelle);
         this.mapPanier = new HashMap();
@@ -25,6 +26,8 @@ public class ActionComposee extends Action {
     public void enrgComposition(ActionSimple as, float pourcentage) {
         this.mapPanier.put(as, pourcentage);
     }
+    
+   
 
     @Override
     public float valeur(Jour j) {
@@ -37,6 +40,13 @@ public class ActionComposee extends Action {
         
         return valeur;
     }
+    
+    public Map<ActionSimple, Float> getMapPanier() {
+        return this.mapPanier;
+    }
+    
+
+     
     
     
 }
