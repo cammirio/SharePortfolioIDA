@@ -74,6 +74,9 @@ public class Portefeuille {
             return this.mapLignes.get(a).getQte();
         }
 
+    public LignePortefeuille getAction(Action a){
+        return this.mapLignes.get(a);
+    }
     public float valeur(Jour j) {
         float total = 0;
         for (LignePortefeuille lp : this.mapLignes.values()) {
