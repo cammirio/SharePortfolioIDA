@@ -36,4 +36,14 @@ public class PortefeuilleTest {
         p.vendre(act,10);
         assertEquals(p.getQte(act), 10);
         }
+    
+    @Test
+    public void TestAcheter(){
+        p.acheter(act, 10);
+        int premiereQuantite = p.getQte(act);
+        p.acheter(act, 10);
+        
+        assertEquals(p.getQte(act), 20);
+        assertEquals(p.getQte(act), premiereQuantite+10);
+    }
 }
