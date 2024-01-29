@@ -17,6 +17,7 @@ package tp04.metier;
 
 import java.util.HashMap;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import org.junit.jupiter.api.Test;
 import tp04.metier.Portefeuille.LignePortefeuille;
 
@@ -35,5 +36,7 @@ public class PortefeuilleTest {
         p.acheter(act,20);
         p.vendre(act,10);
         assertEquals(p.getQte(act), 10);
+        p.vendre(act, 10);
+        assertNull(p.getAction(act));
         }
 }
