@@ -5,6 +5,14 @@
 * [My - Margaux] → mymargaux
 * [Camille - Tessa] → camilletessa
 
+### Règle de nommage des messages de commit 
+```
+Décrivez ce que vous avez fait 
+
+Programmer : [nom de la personne qui a codé]
+Reviewer : [nom de la seconde personne]
+```
+
 #### Pour changer de branche
 ```Dans NetBeans, clique droit sur le projet → Git → Branch/Tag → Switch to Branch 	```
 
