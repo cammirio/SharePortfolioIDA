@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tp04.exec;
+package execution.exec;
 
-import tp04.metier.Action;
-import tp04.metier.ActionComposee;
-import tp04.metier.ActionSimple;
-import tp04.metier.Jour;
-import tp04.metier.Portefeuille;
+import gestion.metier.Action;
+import gestion.metier.ActionComposee;
+import gestion.metier.ActionSimple;
+import gestion.metier.Jour;
+import gestion.metier.Portefeuille;
 import java.util.Map;
 
 

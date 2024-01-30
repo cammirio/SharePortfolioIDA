@@ -13,9 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package tp04.metier;
+package test.metier;
+import gestion.metier.ActionSimple;
 import java.util.Map;
-import tp04.metier.ActionComposee;
+import gestion.metier.ActionComposee;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
