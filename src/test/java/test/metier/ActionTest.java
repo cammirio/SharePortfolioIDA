@@ -63,7 +63,6 @@ public class ActionTest {
             super("");
         }
 
-
         public double valeur(Jour j) {
             return 0.0F;
         }

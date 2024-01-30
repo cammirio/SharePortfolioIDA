@@ -43,7 +43,6 @@ public class ActionSimple extends Action {
     }
     
     @Override
-
     public double valeur(Jour j) {
         if(this.mapCours.containsKey(j) == true)
             return this.mapCours.get(j).getValeur();
