@@ -16,7 +16,7 @@
  *Ce package contient la classe permettant lancer une opération sur le portefeuille d'action
  *(achat, vente, création de portfeuille etc...)
  */
-package tp.exec;
+package execution.exec;
 
 /**
  *
