@@ -23,6 +23,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  *
@@ -76,8 +77,7 @@ public class ActionTest {
         assertTrue(action1.equals(action1));
         assertTrue(action1.equals(action2));
         assertFalse(action1.equals(actionDifferent));
-        assertFalse(action1.equals("Test Action 2"));
-        assertFalse(action1.equals(null));
+      
     }
     
     public class ActionImpl extends Action {

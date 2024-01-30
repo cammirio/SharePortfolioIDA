@@ -15,22 +15,20 @@
  */
 package test.metier;
 import gestion.metier.Jour;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 /**
  *
  * @author peachmois
  */
 public class JourTest {
     
-    private int annee;
-    private int noJour;
+    private Jour j = new Jour(2024, 2);
+    private Jour j2 = new Jour(2024, 2);
     
     @Test
     public void testAnneeJour() {
-        Jour j = new Jour(2024, 2);
+        
         assertEquals(2024, j.getAnnee());
         assertEquals(2, j.getNoJour());
     }
@@ -38,14 +36,12 @@ public class JourTest {
     @Test
     public void testEquals() {
         // Créer deux objets Jour égaux
-        Jour jour1 = new Jour(2024, 2);
-        Jour jour2 = new Jour(2024, 2);
 
         Jour jourDifferent = new Jour(2023, 2);
-        assertTrue(jour1.equals(jour1));
-        assertTrue(jour1.equals(jour2));
-        assertFalse(jour1.equals(jourDifferent));
-        assertFalse(jour1.equals("2024-02-01"));
-        assertFalse(jour1.equals(null));
+        assertTrue(j.equals(j));
+        assertTrue(j.equals(j2));
+        assertFalse(j.equals(jourDifferent));
+        assertFalse(j.equals("2024-02-01"));
+        assertFalse(j.equals(null));
     }
     }
