@@ -40,12 +40,13 @@ public class ActionComposee extends Action {
    
 
     @Override
-    public float valeur(Jour j) {
-        float valeur;
+
+    public double valeur(Jour j) {
+        double valeur;
         
         valeur = 0;
         for(ActionSimple as : this.mapPanier.keySet()) {
-            valeur = valeur + (as.valeur(j) * this.mapPanier.get(as));
+             valeur = valeur + (as.valeur(j) * this.mapPanier.get(as));
         }
         
         return valeur;

@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 package execution.exec;
-
 import gestion.metier.Action;
 import gestion.metier.ActionComposee;
 import gestion.metier.ActionSimple;
@@ -57,7 +56,7 @@ public class Run {
         for (Map.Entry<ActionSimple, Float> entry : composition.entrySet()) {
         System.out.println(entry.getKey().getLibelle() + " : " + entry.getValue() * 100 + "%");
         }
-
+      
         Portefeuille p;
         p = new Portefeuille();
         p.acheter(axa, 10);
