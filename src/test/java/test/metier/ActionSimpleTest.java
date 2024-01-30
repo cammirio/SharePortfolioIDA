@@ -13,8 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package tp04.metier;
+package test.metier;
 
+import gestion.metier.ActionSimple;
+import gestion.metier.Jour;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
@@ -39,6 +41,7 @@ public class ActionSimpleTest {
         // Vérifier que la méthode valeur renvoie la valeur attendue, qui est 1
         float valeurAttendue = 1;
         assertEquals(valeurAttendue, action.valeur(jour));
+        
     
 }
 }
