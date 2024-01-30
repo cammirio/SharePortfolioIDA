@@ -15,13 +15,14 @@
  */
 package test.metier;
 
-import gestion.metier.ActionSimple;
 import gestion.metier.Portefeuille;
+import gestion.metier.ActionComposee;
+import gestion.metier.Jour;
+import gestion.metier.ActionSimple;
 import java.util.HashMap;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import org.junit.jupiter.api.Test;
-import gestion.metier.Portefeuille.LignePortefeuille;
 
 
 /**
@@ -50,5 +51,45 @@ public class PortefeuilleTest {
         
         assertEquals(p.getQte(act), 20);
         assertEquals(p.getQte(act), premiereQuantite+10);
+    }
+    
+    @Test 
+    public void testAcheterActionComposee() {
+        
+        ActionComposee actionComposee = new ActionComposee("Action Composee Test");
+        ActionSimple action1 = new ActionSimple("Action 1");
+        ActionSimple action2 = new ActionSimple("Action 2");
+
+        Jour jour = new Jour(2024, 2);
+        Portefeuille portefeuille = new Portefeuille();
+
+        action1.enrgCours(jour, 30.0f); 
+        action2.enrgCours(jour, 20.0f); 
+
+        actionComposee.enrgComposition(action1, 0.5f); 
+        actionComposee.enrgComposition(action2, 0.5f); 
+
+        portefeuille.acheter(actionComposee, 5);
+
+        assertEquals(5, portefeuille.getQte(actionComposee));
+
+        float valeurAttendue = 5 * (0.5f * 30.0f + 0.5f * 20.0f);
+        assertEquals(valeurAttendue, portefeuille.valeur(jour));
+    }
+
+    @Test
+    public void testVendreActionAuPrixDuJour() {
+        ActionSimple action = new ActionSimple("Test Action");
+        Jour jour = new Jour(2024, 2);
+        float prixDuJour = 50; 
+        Portefeuille portefeuille = new Portefeuille();
+        portefeuille.acheter(action, 10); 
+        action.enrgCours(jour, prixDuJour);
+      
+        portefeuille.vendre(action, 1); 
+        assertEquals(9, portefeuille.getQte(action));
+
+        float valeurAttendue = 9 * prixDuJour;
+        assertEquals(valeurAttendue, portefeuille.valeur(jour));
     }
 }

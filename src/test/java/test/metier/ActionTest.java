@@ -22,8 +22,6 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-
 /**
  *
  * @author CamilleM
@@ -65,7 +63,7 @@ public class ActionTest {
             super("");
         }
 
-        public float valeur(Jour j) {
+        public double valeur(Jour j) {
             return 0.0F;
         }
     }
