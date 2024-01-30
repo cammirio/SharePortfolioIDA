@@ -13,13 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package tp04.exec;
+package execution.exec;
 
-import tp04.metier.Action;
-import tp04.metier.ActionComposee;
-import tp04.metier.ActionSimple;
-import tp04.metier.Jour;
-import tp04.metier.Portefeuille;
+import gestion.metier.ActionComposee;
+import gestion.metier.ActionSimple;
+import gestion.metier.Jour;
+import gestion.metier.Portefeuille;
 import java.util.Map;
 
 

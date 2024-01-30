@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package tp04.metier;
+package gestion.metier;
 
 /**
  *
