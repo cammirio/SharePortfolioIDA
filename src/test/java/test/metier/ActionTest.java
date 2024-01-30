@@ -15,13 +15,15 @@
  */
 package test.metier;
 
-import gestion.metier.Action;
+import gestion.metier.ActionSimple;
 import gestion.metier.Jour;
+import gestion.metier.Action;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+
 /**
  *
  * @author CamilleM
@@ -52,11 +54,32 @@ public class ActionTest {
      */
     @Test
     public void testGetLibelle() {
-        
+    
+        ActionSimple action1 = new ActionSimple("Action 1");
+        assertEquals("Action 1", action1.getLibelle());
+    }
         // TODO review the generated test code and remove the default call to fail.
        
+     @Test
+    public void testToString() {
+        ActionSimple action1 = new ActionSimple("Action 1");
+        assertEquals("Action 1", action1.toString());
     }
-   
+    
+    @Test
+    public void testEquals() {
+     
+        ActionSimple action1 = new ActionSimple("Test Action");
+        ActionSimple action2 = new ActionSimple("Test Action");
+
+        ActionSimple actionDifferent = new ActionSimple("AutreLibelle");
+        assertTrue(action1.equals(action1));
+        assertTrue(action1.equals(action2));
+        assertFalse(action1.equals(actionDifferent));
+        assertFalse(action1.equals("Test Action 2"));
+        assertFalse(action1.equals(null));
+    }
+    
     public class ActionImpl extends Action {
 
         public ActionImpl() {
@@ -64,6 +87,7 @@ public class ActionTest {
         }
 
         public double valeur(Jour j) {
+
             return 0.0F;
         }
     }

@@ -15,10 +15,11 @@
  */
 package test.metier;
 
-import gestion.metier.Portefeuille;
-import gestion.metier.ActionComposee;
-import gestion.metier.Jour;
 import gestion.metier.ActionSimple;
+import gestion.metier.Portefeuille;
+import gestion.metier.Jour;
+import gestion.metier.ActionComposee;
+
 import java.util.HashMap;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;

@@ -1,4 +1,4 @@
-
+/*
  * Copyright 2024 CamilleM.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 package execution.exec;
-
+import gestion.metier.Action;
 import gestion.metier.ActionComposee;
 import gestion.metier.ActionSimple;
 import gestion.metier.Jour;
@@ -48,7 +48,15 @@ public class Run {
         // affichage des cours - comme 1 action simple et 1 action
         System.out.println("Action simple *bnp* à j1 : " + bnp.valeur(j1));
         System.out.println("Action *Banque-Assurance* à j2 : " + bqAss.valeur(j2));
+        // Récupération de la composition d'une action composée
+        Map<ActionSimple, Float> composition = bqAss.getMapPanier();
 
+        // Affichage de la composition d'une action composée
+        System.out.println("Composition de l'action composée : " + bqAss.getLibelle());
+        for (Map.Entry<ActionSimple, Float> entry : composition.entrySet()) {
+        System.out.println(entry.getKey().getLibelle() + " : " + entry.getValue() * 100 + "%");
+        }
+      
         Portefeuille p;
         p = new Portefeuille();
         p.acheter(axa, 10);
