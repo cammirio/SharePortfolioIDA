@@ -15,8 +15,8 @@
  */
 package test.metier;
 
-import gestion.metier.ActionSimple;
 import gestion.metier.Jour;
+import gestion.metier.ActionSimple;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 

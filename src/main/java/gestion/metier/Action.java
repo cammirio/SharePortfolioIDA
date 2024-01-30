@@ -39,7 +39,7 @@ public abstract class Action {
         this.libelle = libelle;
     }
 
-    public abstract float valeur(Jour j);
+    public abstract double valeur(Jour j);
     
     @Override
     public int hashCode() {
