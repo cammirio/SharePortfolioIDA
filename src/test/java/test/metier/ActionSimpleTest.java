@@ -26,22 +26,20 @@ import org.junit.jupiter.api.Test;
  */
 public class ActionSimpleTest {
     
-    @Test
-    public void testValeur() 
-    {
-         ActionSimple action = new ActionSimple("Action test");
+  @Test
+  public void testValeur() {
+    ActionSimple action = new ActionSimple("Action test");
         
-        // Créer une instance de Jour avec l'année 2024 et le numéro de jour 2
-        Jour jour = new Jour(2024, 2);
+    // Créer une instance de Jour avec l'année 2024 et le numéro de jour 2
+    Jour jour = new Jour(2024, 2);
 
-        // Act
-        // Enregistrer un cours pour l'action à la date spécifiée (2024-2) avec une valeur de 1
-        action.enrgCours(jour, 1);
+    // Act
+    // Enregistrer un cours pour l'action à la date spécifiée (2024-2) avec une valeur de 1
+    action.enrgCours(jour, 1);
 
-        // Assert
-        // Vérifier que la méthode valeur renvoie la valeur attendue, qui est 1
-        float valeurAttendue = 1;
-        assertEquals(valeurAttendue, action.valeur(jour));
-    
-}
+    // Assert
+    // Vérifier que la méthode valeur renvoie la valeur attendue, qui est 1
+    float valeurAttendue = 1;
+    assertEquals(valeurAttendue, action.valeur(jour));
+    }
 }

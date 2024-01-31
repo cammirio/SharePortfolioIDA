@@ -21,8 +21,7 @@ import gestion.metier.Portefeuille;
 import java.util.Map;
 
 
-public class Run 
-{
+public class Run {
   public static final int COURSJ1 = 200;
   public static final int COURSJ2 = 250;
   public static final int COURSJ11 = 100;
@@ -43,11 +42,12 @@ public class Run
   public static final float POURCENTAGE2 = 0.7F;
   public static final float CONSTANTE = 100;
     
-  public static void main(String[] args) 
-    {
-    ActionSimple bnp, axa;
+  public static void main(String[] args) {
+    ActionSimple bnp;
+    ActionSimple axa;
     ActionComposee bqAss;
-    Jour j1, j2;
+    Jour j1;
+    Jour j2;
 
     // init des objets metiers Jour
     j1 = new Jour(ANNEE, JOUR1);
@@ -73,9 +73,8 @@ public class Run
 
     // Affichage de la composition d'une action composée
     System.out.println("Composition de l'action composée : " + bqAss.getLibelle());
-    for (Map.Entry<ActionSimple, Float> entry : composition.entrySet()) 
-    {
-    System.out.println(entry.getKey().getLibelle() + " : " + entry.getValue() * CONSTANTE + "%");
+    for (Map.Entry<ActionSimple, Float> entry : composition.entrySet()) {
+      System.out.println(entry.getKey().getLibelle() + " : " + entry.getValue() * CONSTANTE + "%");
     }
 
     Portefeuille p;

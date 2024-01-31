@@ -29,33 +29,27 @@ public class ActionTest {
      * Test of getLibelle method, of class Action.
      */
     @Test
-    public void testGetLibelle() 
-    {
-    
-        ActionSimple action1 = new ActionSimple("Action 1");
-        assertEquals("Action 1", action1.getLibelle());
+    public void testGetLibelle() {
+      ActionSimple action1 = new ActionSimple("Action 1");
+      assertEquals("Action 1", action1.getLibelle());
     }
         // TODO review the generated test code and remove the default call to fail.
        
-     @Test
-    public void testToString() 
-    {
-        ActionSimple action1 = new ActionSimple("Action 1");
-        assertEquals("Action 1", action1.toString());
+    @Test
+    public void testToString() {
+      ActionSimple action1 = new ActionSimple("Action 1");
+      assertEquals("Action 1", action1.toString());
     }
     
     @Test
-    public void testEquals() 
-    {
-     
-        ActionSimple action1 = new ActionSimple("Test Action");
-        ActionSimple action2 = new ActionSimple("Test Action");
+    public void testEquals() {
+      ActionSimple action1 = new ActionSimple("Test Action");
+      ActionSimple action2 = new ActionSimple("Test Action");
 
-        ActionSimple actionDifferent = new ActionSimple("AutreLibelle");
-        assertEquals(action1,action1);
-        assertEquals(action1,action2);
-        assertFalse(action1.equals(actionDifferent));
-      
+      ActionSimple actionDifferent = new ActionSimple("AutreLibelle");
+      assertEquals(action1,action1);
+      assertEquals(action1,action2);
+      assertFalse(action1.equals(actionDifferent));
     }
     
 }
