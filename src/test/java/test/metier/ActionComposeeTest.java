@@ -36,7 +36,8 @@ public class ActionComposeeTest {
     private final Jour j2 = new Jour(2014, 2);
     
     @Test
-    public void testGetMapPanier(){
+    public void testGetMapPanier()
+    {
         //Enregistrement de la composition de l'action composée
         bqAss.enrgComposition(axa, 0.5f);
         bqAss.enrgComposition(bnp, 0.4f);
@@ -55,12 +56,14 @@ public class ActionComposeeTest {
     }
     
         @Test
-    public void testGetlibelle(){
+    public void testGetlibelle()
+    {
         assertEquals("Banque-Assurance", bqAss.getLibelle());
     }
     
     @Test
-    public void testValeur(){ 
+    public void testValeur()
+    { 
         bqAss.enrgComposition(axa, 0.5f);
         bqAss.enrgComposition(bnp, 0.4f);
         bqAss.enrgComposition(lcl, 0.1f);

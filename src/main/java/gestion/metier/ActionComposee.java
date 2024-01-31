@@ -28,12 +28,14 @@ public class ActionComposee extends Action {
     Map<ActionSimple, Float> mapPanier;
 
   
-    public ActionComposee(String libelle) {
+    public ActionComposee(String libelle) 
+    {
         super(libelle);
         this.mapPanier = new HashMap();
     }
     
-    public void enrgComposition(ActionSimple as, float pourcentage) {
+    public void enrgComposition(ActionSimple as, float pourcentage) 
+    {
         this.mapPanier.put(as, pourcentage);
     }
     
@@ -41,18 +43,21 @@ public class ActionComposee extends Action {
 
     @Override
 
-    public double valeur(Jour j) {
+    public double valeur(Jour j) 
+    {
         double valeur;
         
         valeur = 0;
-        for(ActionSimple as : this.mapPanier.keySet()) {
+        for(ActionSimple as : this.mapPanier.keySet()) 
+        {
              valeur = valeur + (as.valeur(j) * this.mapPanier.get(as));
         }
         
         return valeur;
     }
     
-    public Map<ActionSimple, Float> getMapPanier() {
+    public Map<ActionSimple, Float> getMapPanier() 
+    {
         return this.mapPanier;
     }
     

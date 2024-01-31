@@ -32,65 +32,83 @@ public class Portefeuille {
         
         private int qte;
         
-        public int getQte() {
+        public int getQte() 
+        {
             return qte;
         }
         
-        public void setQte(int qte) {
+        public void setQte(int qte) 
+        {
             this.qte = qte;
         }
         
-        public Action getAction() {
+        public Action getAction() 
+        {
             return this.action;
         }
         
-        public LignePortefeuille(Action action, int qte) {
+        public LignePortefeuille(Action action, int qte) 
+        {
             this.action = action;
             this.qte = qte;
         }
 
-        public String toString() {
+        public String toString() 
+        {
             return Integer.toString(qte);
         }
     }
     
-    public Portefeuille() {
+    public Portefeuille() 
+    {
         this.mapLignes = new HashMap();
     }
     
-    public void acheter(Action a, int q) {
-        if (this.mapLignes.containsKey(a) == false) {
+    public void acheter(Action a, int q) 
+    {
+        if (this.mapLignes.containsKey(a) == false) 
+        {
             this.mapLignes.put(a, new LignePortefeuille(a, q));
-        } else {
+        } else 
+        {
             this.mapLignes.get(a).setQte(this.mapLignes.get(a).getQte() + q);
         }
     }
 
-    public void vendre(Action a, int q) {
-        if (this.mapLignes.containsKey(a) == true) {
-            if (this.mapLignes.get(a).getQte() > q) {
+    public void vendre(Action a, int q) 
+    {
+        if (this.mapLignes.containsKey(a) == true) 
+        {
+            if (this.mapLignes.get(a).getQte() > q) 
+            {
                 this.mapLignes.get(a).setQte(this.mapLignes.get(a).getQte() - q);
-            } else if (this.mapLignes.get(a).getQte() == q) {
+            } else if (this.mapLignes.get(a).getQte() == q) 
+            {
                 this.mapLignes.remove(a);
             }
         }        
     }
     
-    public String toString() {
+    public String toString() 
+    {
         return this.mapLignes.toString();
     }
     
-    public int getQte(Action a) {
+    public int getQte(Action a) 
+    {
             return this.mapLignes.get(a).getQte();
         }
 
-    public LignePortefeuille getAction(Action a){
+    public LignePortefeuille getAction(Action a)
+    {
         return this.mapLignes.get(a);
     }
   
-    public double valeur(Jour j) {
+    public double valeur(Jour j) 
+    {
         double total = 0;
-        for (LignePortefeuille lp : this.mapLignes.values()) {
+        for (LignePortefeuille lp : this.mapLignes.values()) 
+        {
             total = total + (lp.getQte() * lp.getAction().valeur(j));
         }
         return total;

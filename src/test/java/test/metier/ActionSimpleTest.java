@@ -27,7 +27,8 @@ import org.junit.jupiter.api.Test;
 public class ActionSimpleTest {
     
     @Test
-    public void testValeur() {
+    public void testValeur() 
+    {
          ActionSimple action = new ActionSimple("Action test");
         
         // Créer une instance de Jour avec l'année 2024 et le numéro de jour 2

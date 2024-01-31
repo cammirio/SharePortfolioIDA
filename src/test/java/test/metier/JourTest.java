@@ -27,14 +27,16 @@ public class JourTest {
     private Jour j2 = new Jour(2024, 2);
     
     @Test
-    public void testAnneeJour() {
+    public void testAnneeJour() 
+    {
         
         assertEquals(2024, j.getAnnee());
         assertEquals(2, j.getNoJour());
     }
     
     @Test
-    public void testEquals() {
+    public void testEquals() 
+    {
         // Créer deux objets Jour égaux
 
         Jour jourDifferent = new Jour(2023, 2);

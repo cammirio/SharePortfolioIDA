@@ -30,31 +30,13 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author CamilleM
  */
 public class ActionTest {
-    
-    public ActionTest() {
-    }
-    
-    @BeforeAll
-    public static void setUpClass() {
-    }
-    
-    @AfterAll
-    public static void tearDownClass() {
-    }
-    
-    @BeforeEach
-    public void setUp() {
-    }
-    
-    @AfterEach
-    public void tearDown() {
-    }
 
     /**
      * Test of getLibelle method, of class Action.
      */
     @Test
-    public void testGetLibelle() {
+    public void testGetLibelle() 
+    {
     
         ActionSimple action1 = new ActionSimple("Action 1");
         assertEquals("Action 1", action1.getLibelle());
@@ -62,13 +44,15 @@ public class ActionTest {
         // TODO review the generated test code and remove the default call to fail.
        
      @Test
-    public void testToString() {
+    public void testToString() 
+    {
         ActionSimple action1 = new ActionSimple("Action 1");
         assertEquals("Action 1", action1.toString());
     }
     
     @Test
-    public void testEquals() {
+    public void testEquals() 
+    {
      
         ActionSimple action1 = new ActionSimple("Test Action");
         ActionSimple action2 = new ActionSimple("Test Action");
@@ -78,18 +62,6 @@ public class ActionTest {
         assertTrue(action1.equals(action2));
         assertFalse(action1.equals(actionDifferent));
       
-    }
-    
-    public class ActionImpl extends Action {
-
-        public ActionImpl() {
-            super("");
-        }
-
-        public double valeur(Jour j) {
-
-            return 0.0F;
-        }
     }
     
 }

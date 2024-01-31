@@ -36,16 +36,18 @@ public class PortefeuilleTest {
     private Portefeuille p = new Portefeuille();
     
     @Test
-    public void TestVendre() {
+    public void TestVendre() 
+    {
         p.acheter(act,20);
         p.vendre(act,10);
         assertEquals(p.getQte(act), 10);
         p.vendre(act, 10);
         assertNull(p.getAction(act));
-        }
+    }
     
     @Test
-    public void TestAcheter(){
+    public void TestAcheter()
+    {
         p.acheter(act, 10);
         int premiereQuantite = p.getQte(act);
         p.acheter(act, 10);
@@ -55,7 +57,8 @@ public class PortefeuilleTest {
     }
     
     @Test 
-    public void testAcheterActionComposee() {
+    public void testAcheterActionComposee() 
+    {
         
         ActionComposee actionComposee = new ActionComposee("Action Composee Test");
         ActionSimple action1 = new ActionSimple("Action 1");
@@ -79,7 +82,8 @@ public class PortefeuilleTest {
     }
 
     @Test
-    public void testVendreActionAuPrixDuJour() {
+    public void testVendreActionAuPrixDuJour() 
+    {
         ActionSimple action = new ActionSimple("Test Action");
         Jour jour = new Jour(2024, 2);
         float prixDuJour = 50; 

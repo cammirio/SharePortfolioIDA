@@ -24,46 +24,54 @@ import java.util.Objects;
  */
 public abstract class Action {
     
-    private String libelle;
+    private final String libelle;
 
     /**
      * Get the value of libelle
      *
      * @return the value of libelle
      */
-    public String getLibelle() {
+    public String getLibelle() 
+    {
         return libelle;
     }
 
-    public Action(String libelle) {
+    public Action(String libelle) 
+    {
         this.libelle = libelle;
     }
 
     public abstract double valeur(Jour j);
     
     @Override
-    public int hashCode() {
+    public int hashCode() 
+    {
         int hash = 3;
         hash = 53 * hash + Objects.hashCode(this.libelle);
         return hash;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
+    public boolean equals(Object obj) 
+    {
+        if (obj == null) 
+        {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (getClass() != obj.getClass()) 
+        {
             return false;
         }
         final Action other = (Action) obj;
-        if (!Objects.equals(this.libelle, other.libelle)) {
+        if (!Objects.equals(this.libelle, other.libelle)) 
+        {
             return false;
         }
         return true;
     }
 
-    public String toString() {
+    public String toString() 
+    {
         return this.getLibelle();
     }
 }

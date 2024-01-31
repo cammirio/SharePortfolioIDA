@@ -29,7 +29,8 @@ public class ActionSimple extends Action {
     private Map<Jour, Cours> mapCours;
     
     // constructeur
-    public ActionSimple(String libelle) {
+    public ActionSimple(String libelle) 
+    {
         // Action simple initialisée comme 1 action
         super(libelle);
         // init spécifique
@@ -37,13 +38,15 @@ public class ActionSimple extends Action {
     }
     
     // enrg possible si pas de cours pour ce jour
-    public void enrgCours(Jour j, float v) {
+    public void enrgCours(Jour j, float v) 
+    {
         if(this.mapCours.containsKey(j) == false)
             this.mapCours.put(j, new Cours(j, v));
     }
     
     @Override
-    public double valeur(Jour j) {
+    public double valeur(Jour j) 
+    {
         if(this.mapCours.containsKey(j) == true)
             return this.mapCours.get(j).getValeur();
         else 
@@ -57,15 +60,18 @@ public class ActionSimple extends Action {
 
         private float valeur;
 
-        public float getValeur() {
+        public float getValeur() 
+        {
             return valeur;
         }
         
-        public Jour getJour() {
+        public Jour getJour() 
+        {
             return jour;
         }
 
-        public Cours(Jour jour, float valeur) {
+        public Cours(Jour jour, float valeur) 
+        {
             this.jour = jour;
             this.valeur = valeur;
         }
