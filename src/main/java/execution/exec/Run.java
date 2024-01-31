@@ -35,6 +35,13 @@ public class Run
   public static final int QTEAXA3 = 5;
   public static final int QTEAXA4 = 5;
   public static final int QTEBNP2 = 50;
+  public static final String PORTEFEUILLE = "Portefeuille : ";
+  public static final int ANNEE = 2014;
+  public static final int JOUR1 = 1;
+  public static final int JOUR2 = 2;
+  public static final float POURCENTAGE1 = 0.3F;
+  public static final float POURCENTAGE2 = 0.7F;
+  public static final float CONSTANTE = 100;
     
   public static void main(String[] args) 
     {
@@ -43,16 +50,16 @@ public class Run
     Jour j1, j2;
 
     // init des objets metiers Jour
-    j1 = new Jour(2014, 1);
-    j2 = new Jour(2014, 2);
+    j1 = new Jour(ANNEE, JOUR1);
+    j2 = new Jour(ANNEE, JOUR2);
 
     // creation d'actions simples et composée
     bnp = new ActionSimple("BNP");
     axa = new ActionSimple("AXA");
     bqAss = new ActionComposee("Banque-Assurance");
             // enrg de la composition de l'action composée
-    bqAss.enrgComposition(axa, 0.3F);
-    bqAss.enrgComposition(bnp, 0.7F);
+    bqAss.enrgComposition(axa, POURCENTAGE1);
+    bqAss.enrgComposition(bnp, POURCENTAGE2);
     // enrg. de 2 cours pour chaque action 
     axa.enrgCours(j1, COURSJ1);
     axa.enrgCours(j2, COURSJ2);
@@ -68,27 +75,27 @@ public class Run
     System.out.println("Composition de l'action composée : " + bqAss.getLibelle());
     for (Map.Entry<ActionSimple, Float> entry : composition.entrySet()) 
     {
-    System.out.println(entry.getKey().getLibelle() + " : " + entry.getValue() * 100 + "%");
+    System.out.println(entry.getKey().getLibelle() + " : " + entry.getValue() * CONSTANTE + "%");
     }
 
     Portefeuille p;
     p = new Portefeuille();
     p.acheter(axa, QTEAXA);
-    System.out.println("Portefeuille : " + p);
+    System.out.println(PORTEFEUILLE + p);
     p.acheter(bnp, QTEBNP);
-    System.out.println("Portefeuille : " + p);
+    System.out.println(PORTEFEUILLE + p);
     p.acheter(bqAss, QTEBQASS);
-    System.out.println("Portefeuille : " + p);
+    System.out.println(PORTEFEUILLE + p);
     p.acheter(bqAss, QTE2BQASS);
-    System.out.println("Portefeuille : " + p);
+    System.out.println(PORTEFEUILLE + p);
     System.out.println("Portefeuille à j1 : " + p.valeur(j1));
     p.vendre(axa, QTEAXA2);
-    System.out.println("Portefeuille : " + p);
+    System.out.println(PORTEFEUILLE + p);
     p.vendre(axa, QTEAXA3);
-    System.out.println("Portefeuille : " + p);
+    System.out.println(PORTEFEUILLE + p);
     p.vendre(axa, QTEAXA4);
-    System.out.println("Portefeuille : " + p);
+    System.out.println(PORTEFEUILLE + p);
     p.vendre(bnp, QTEBNP);
-    System.out.println("Portefeuille : " + p);
+    System.out.println(PORTEFEUILLE + p);
     }
 }

@@ -85,6 +85,9 @@ public class Portefeuille {
             } else if (this.mapLignes.get(a).getQte() == q) 
             {
                 this.mapLignes.remove(a);
+            }else
+            {
+            throw new IllegalStateException();
             }
         }        
     }

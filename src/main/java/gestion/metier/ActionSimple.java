@@ -41,16 +41,21 @@ public class ActionSimple extends Action {
     public void enrgCours(Jour j, float v) 
     {
         if(this.mapCours.containsKey(j) == false)
+        {
             this.mapCours.put(j, new Cours(j, v));
+        }
     }
     
     @Override
     public double valeur(Jour j) 
     {
         if(this.mapCours.containsKey(j) == true)
+        {
             return this.mapCours.get(j).getValeur();
-        else 
+        } else 
+        {
             return 0; // definition d'une constante possible
+        }
     }
   
     // encapsulation de la définition de la classe Cours

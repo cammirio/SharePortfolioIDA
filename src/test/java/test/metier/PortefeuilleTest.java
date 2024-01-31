@@ -31,9 +31,8 @@ import org.junit.jupiter.api.Test;
  * @author CamilleM
  */
 public class PortefeuilleTest {
-    HashMap<String, Integer> map = new HashMap<>();
-    private ActionSimple act = new ActionSimple("Test");
-    private Portefeuille p = new Portefeuille();
+    private final ActionSimple act = new ActionSimple("Test");
+    private final Portefeuille p = new Portefeuille();
     
     @Test
     public void TestVendre() 
