@@ -59,7 +59,7 @@ public class ActionSimple extends Action {
     }
   
     // encapsulation de la définition de la classe Cours
-    private class Cours {
+    private static class Cours {
         
         private Jour jour;
 

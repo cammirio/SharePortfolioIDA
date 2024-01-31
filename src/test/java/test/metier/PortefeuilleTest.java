@@ -39,7 +39,7 @@ public class PortefeuilleTest {
     {
         p.acheter(act,20);
         p.vendre(act,10);
-        assertEquals(p.getQte(act), 10);
+        assertEquals(10,p.getQte(act));
         p.vendre(act, 10);
         assertNull(p.getAction(act));
     }
@@ -51,7 +51,7 @@ public class PortefeuilleTest {
         int premiereQuantite = p.getQte(act);
         p.acheter(act, 10);
         
-        assertEquals(p.getQte(act), 20);
+        assertEquals(20,p.getQte(act));
         assertEquals(p.getQte(act), premiereQuantite+10);
     }
     

@@ -16,12 +16,6 @@
 package test.metier;
 
 import gestion.metier.ActionSimple;
-import gestion.metier.Jour;
-import gestion.metier.Action;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -58,8 +52,8 @@ public class ActionTest {
         ActionSimple action2 = new ActionSimple("Test Action");
 
         ActionSimple actionDifferent = new ActionSimple("AutreLibelle");
-        assertTrue(action1.equals(action1));
-        assertTrue(action1.equals(action2));
+        assertEquals(action1,action1);
+        assertEquals(action1,action2);
         assertFalse(action1.equals(actionDifferent));
       
     }

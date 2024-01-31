@@ -36,7 +36,7 @@ public abstract class Action {
         return libelle;
     }
 
-    public Action(String libelle) 
+    protected Action(String libelle) 
     {
         this.libelle = libelle;
     }

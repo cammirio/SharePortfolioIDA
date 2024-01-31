@@ -40,8 +40,8 @@ public class JourTest {
         // Créer deux objets Jour égaux
 
         Jour jourDifferent = new Jour(2023, 2);
-        assertTrue(j.equals(j));
-        assertTrue(j.equals(j2));
+        assertEquals(j,j);
+        assertEquals(j,j2);
         assertFalse(j.equals(jourDifferent));
         assertFalse(j.equals("2024-02-01"));
         assertFalse(j.equals(null));
