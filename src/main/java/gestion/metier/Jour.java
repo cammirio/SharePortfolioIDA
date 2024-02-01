@@ -30,9 +30,9 @@ public class Jour {
     this.noJour = noJour;
     }
     /**
-     * Get the value of annee
+     * Permet d'avoir la valeur de l'année
      *
-     * @return the value of annee
+     * @return la valeur de l'année
      */
   public int getAnnee() {
     return annee;
@@ -40,9 +40,9 @@ public class Jour {
 
 
     /**
-     * Get the value of noJour
+     * Permet d'avoir la valeur du jour
      *
-     * @return the value of noJour
+     * @return la valeur du jour
      */
   public int getNoJour() {
     return noJour;
