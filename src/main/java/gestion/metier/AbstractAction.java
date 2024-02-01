@@ -22,12 +22,11 @@ import java.util.Objects;
  *
  * @author perussel
  */
-public abstract class AbstractAction 
-{
+public abstract class AbstractAction {
   private final String libelle;
   
   protected AbstractAction(String libelle) {
-      this.libelle = libelle;
+    this.libelle = libelle;
     }
 
     /**
@@ -35,35 +34,35 @@ public abstract class AbstractAction
      *
      * @return the value of libelle
      */
-    public String getLibelle() {
-      return libelle;
+  public String getLibelle() {
+    return libelle;
     }
 
-    public abstract double valeur(Jour j);
+  public abstract double valeur(Jour j);
     
-    @Override
-    public int hashCode() {
-      int hash = 3;
-      hash = 53 * hash + Objects.hashCode(this.libelle);
-      return hash;
+  @Override
+  public int hashCode() {
+    var hash = 3;
+    hash = 53 * hash + Objects.hashCode(this.libelle);
+    return hash;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-      if (obj == null) {
-        return false;
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    final AbstractAction other = (AbstractAction) obj;
+    if (!Objects.equals(this.libelle, other.libelle)) {
+      return false;
       }
-      if (getClass() != obj.getClass()) {
-        return false;
-      }
-      final AbstractAction other = (AbstractAction) obj;
-      if (!Objects.equals(this.libelle, other.libelle)) {
-        return false;
-      }
-        return true;
+      return true;
     }
 
-    public String toString() {
-      return this.getLibelle();
+  public String toString() {
+    return this.getLibelle();
     }
 }
