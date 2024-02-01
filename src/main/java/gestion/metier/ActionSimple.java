@@ -49,8 +49,8 @@ public class ActionSimple extends AbstractAction {
       return this.mapCours.get(j).getValeur();
     } else 
       {
-        // definition d'une constante possible
-        return 0; 
+      // definition d'une constante possible
+      return 0; 
       }
   }
 

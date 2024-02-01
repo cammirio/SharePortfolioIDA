@@ -81,8 +81,8 @@ public abstract class AbstractAction {
      *
      * @return la chaîne de caractère du libellé
      */
-    public String toString() {
-      return this.getLibelle();
+  public String toString() {
+    return this.getLibelle();
 
     }
 }
