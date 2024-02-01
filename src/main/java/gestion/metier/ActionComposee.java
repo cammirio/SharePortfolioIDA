@@ -28,16 +28,16 @@ public class ActionComposee extends AbstractAction {
     // attribut lien
   Map<ActionSimple, Float> mapPanier;
 
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+  @Override
+  public boolean equals(Object obj) {
+    return super.equals(obj); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 41 * hash + Objects.hashCode(this.mapPanier);
-        return hash;
+  @Override
+  public int hashCode() {
+    int hash = 7;
+    hash = 41 * hash + Objects.hashCode(this.mapPanier);
+    return hash;
     }
     
 
@@ -47,9 +47,9 @@ public class ActionComposee extends AbstractAction {
      *
      * @return le hash code de l'action composée
      */
-    public ActionComposee(String libelle) {
-      super(libelle);
-      this.mapPanier = new HashMap();
+  public ActionComposee(String libelle) {
+    super(libelle);
+    this.mapPanier = new HashMap();
     }
     
     /**
@@ -57,8 +57,8 @@ public class ActionComposee extends AbstractAction {
      *
      * @return chaque action simple dans son action composée
      */
-    public void enrgComposition(ActionSimple as, float pourcentage) {
-      this.mapPanier.put(as, pourcentage);
+  public void enrgComposition(ActionSimple as, float pourcentage) {
+    this.mapPanier.put(as, pourcentage);
     }
     
    
@@ -67,23 +67,26 @@ public class ActionComposee extends AbstractAction {
      *
      * @return la valeur de l'action composée
      */
-    @Override
-    public double valeur(Jour j) {
-      double valeur;   
-      valeur = 0;
-      for(ActionSimple as : this.mapPanier.keySet()) {
-        valeur = valeur + (as.valeur(j) * this.mapPanier.get(as));
+  @Override
+  public double valeur(Jour j) {
+    double valeur;   
+    valeur = 0;
+    for(ActionSimple as : this.mapPanier.keySet()) {
+      valeur = valeur + (as.valeur(j) * this.mapPanier.get(as));
+
       } 
-      return valeur;
+    return valeur;
     }
     
+
     /**
      * Permet de retourner la panier d'une action composée
      *
      * @return le panier d'actions composées
      */
-    public Map<ActionSimple, Float> getMapPanier() {
-      return this.mapPanier;
+  public Map<ActionSimple, Float> getMapPanier() {
+    return this.mapPanier;
+
     }
     
 
