@@ -44,31 +44,23 @@ public class ActionComposee extends AbstractAction {
     
 
   
-    /**
-     * Permet d'initialiser une action composée à partir d'un libellé
-     *
-     * @return le hash code de l'action composée
-     */
+    //Permet d'initialiser une action composée à partir d'un libellé
+    //Retourne le hash code de l'action composée
   public ActionComposee(String libelle) {
     super(libelle);
     this.mapPanier = new HashMap();
     }
     
-    /**
-     * Permet d'enregistrer les actions simples d'une action compossée avec un pourcentage de composition
-     *
-     * @return chaque action simple dans son action composée
-     */
+
+     //Permet d'enregistrer les actions simples d'une action compossée avec un pourcentage de composition
+     //Retourne chaque action simple dans son action composée
   public void enrgComposition(ActionSimple as, float pourcentage) {
     this.mapPanier.put(as, pourcentage);
     }
     
    
-    /**
-     * Permet de calculer la valeur totale de l'action composée avec le cours du jour
-     *
-     * @return la valeur de l'action composée
-     */
+    //Permet de calculer la valeur totale de l'action composée avec le cours du jour
+    //Retoune la valeur de l'action composée
   @Override
   public double valeur(Jour j) {
     double valeur;   
@@ -81,11 +73,8 @@ public class ActionComposee extends AbstractAction {
     }
     
 
-    /**
-     * Permet de retourner la panier d'une action composée
-     *
-     * @return le panier d'actions composées
-     */
+    //Permet de retourner la panier d'une action composée
+    //Retourne le panier d'actions composées
   public Map<ActionSimple, Float> getMapPanier() {
     TreeMap<ActionSimple, Float> sortedMap = new TreeMap<>(this.mapPanier);
     return sortedMap;

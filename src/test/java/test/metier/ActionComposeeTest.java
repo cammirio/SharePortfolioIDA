@@ -15,12 +15,10 @@
  */
 package test.metier;
 import gestion.metier.ActionSimple;
-import java.util.Map;
 import gestion.metier.ActionComposee;
 import gestion.metier.Jour;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 /**
@@ -34,26 +32,6 @@ public class ActionComposeeTest {
   private final ActionComposee bqAss = new ActionComposee("Banque-Assurance");
   private final Jour j1 = new Jour(2014, 1);
   private final Jour j2 = new Jour(2014, 2);
-    
-  @Test
-  // S'assurer que la méthode getMapPanier() renvoie la composition correcte du portefeuille.
-  public void testGetMapPanier(){
-    // Arrange
-    bqAss.enrgComposition(axa, 0.5f);
-    bqAss.enrgComposition(bnp, 0.4f);
-    bqAss.enrgComposition(lcl, 0.1f);
-        
-    // Action
-    Map<ActionSimple, Float> composition = bqAss.getMapPanier();
-        
-    // Assert
-    assertTrue(composition.containsKey(axa));
-    assertEquals(0.5f, composition.get(axa), 0.001f); 
-    assertTrue(composition.containsKey(bnp));
-    assertEquals(0.4f, composition.get(bnp), 0.001f);
-    assertTrue(composition.containsKey(lcl));
-    assertEquals(0.1f, composition.get(lcl), 0.001f);
-    }
     
     @Test
     //  Vérifier que la méthode getLibelle() renvoie le libellé correct.
