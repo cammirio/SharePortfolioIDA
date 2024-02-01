@@ -19,6 +19,7 @@ package gestion.metier;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.TreeMap;
 
 /**
  *
@@ -27,15 +28,16 @@ import java.util.Objects;
 public class ActionComposee extends AbstractAction {
     // attribut lien
   Map<ActionSimple, Float> mapPanier;
+  
 
   @Override
   public boolean equals(Object obj) {
-    return super.equals(obj); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    return super.equals(obj);
     }
 
   @Override
   public int hashCode() {
-    int hash = 7;
+    var hash = 7;
     hash = 41 * hash + Objects.hashCode(this.mapPanier);
     return hash;
     }
@@ -85,9 +87,10 @@ public class ActionComposee extends AbstractAction {
      * @return le panier d'actions composées
      */
   public Map<ActionSimple, Float> getMapPanier() {
-    return this.mapPanier;
+    TreeMap<ActionSimple, Float> sortedMap = new TreeMap<>(this.mapPanier);
+    return sortedMap;
+}
 
-    }
     
 
      
