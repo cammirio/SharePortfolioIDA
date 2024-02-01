@@ -36,41 +36,53 @@ public class ActionSimple extends AbstractAction {
     this.mapCours = new HashMap();
     }
     
-    // enrg possible si pas de cours pour ce jour
+    // enregistrement de l'action simple si pas de cours pour ce jour
   public void enrgCours(Jour j, float v) {
     if(this.mapCours.containsKey(j) == false){
       this.mapCours.put(j, new Cours(j, v));
       }
     }
     
-    @Override
-    public double valeur(Jour j) {
-      if(this.mapCours.containsKey(j) == true){
-        return this.mapCours.get(j).getValeur();
-      } else {
-          return 0; // definition d'une constante possible
-        }
+  @Override
+  public double valeur(Jour j) {
+    if(this.mapCours.containsKey(j) == true){
+      return this.mapCours.get(j).getValeur();
+    } else 
+      {
+        // definition d'une constante possible
+        return 0; 
+      }
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    return super.equals(obj);
+  }
+
+  @Override
+  public int hashCode() {
+    return super.hashCode();
     }
   
-    // encapsulation de la définition de la classe Cours
-    private static class Cours {
+  
+  // encapsulation de la définition de la classe Cours
+  private static class Cours {
         
-      private Jour jour;
-
-      private float valeur;
-
-      public float getValeur() {
-        return valeur;
-      }
+    private Jour jour;
+    private float valeur;
+    
+    public Cours(Jour jour, float valeur) {
+      this.jour = jour;
+      this.valeur = valeur;
+    }
+    
+    public float getValeur() {
+      return valeur;
+    }
         
-      public Jour getJour() {
-        return jour;
-      }
-
-      public Cours(Jour jour, float valeur) {
-        this.jour = jour;
-        this.valeur = valeur;
-        }
+    public Jour getJour() {
+      return jour;
+    }
 
     }
 }
