@@ -23,37 +23,34 @@ import java.util.Map;
  *
  * @author perussel
  */
-public class ActionComposee extends Action {
+public class ActionComposee extends AbstractAction {
     // attribut lien
     Map<ActionSimple, Float> mapPanier;
 
   
     public ActionComposee(String libelle) {
-        super(libelle);
-        this.mapPanier = new HashMap();
+      super(libelle);
+      this.mapPanier = new HashMap();
     }
     
     public void enrgComposition(ActionSimple as, float pourcentage) {
-        this.mapPanier.put(as, pourcentage);
+      this.mapPanier.put(as, pourcentage);
     }
     
    
 
     @Override
-
     public double valeur(Jour j) {
-        double valeur;
-        
-        valeur = 0;
-        for(ActionSimple as : this.mapPanier.keySet()) {
-             valeur = valeur + (as.valeur(j) * this.mapPanier.get(as));
-        }
-        
-        return valeur;
+      double valeur;   
+      valeur = 0;
+      for(ActionSimple as : this.mapPanier.keySet()) {
+        valeur = valeur + (as.valeur(j) * this.mapPanier.get(as));
+      } 
+      return valeur;
     }
     
     public Map<ActionSimple, Float> getMapPanier() {
-        return this.mapPanier;
+      return this.mapPanier;
     }
     
 

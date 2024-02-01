@@ -22,16 +22,20 @@ package gestion.metier;
  */
 public class Jour {
 
-    private int annee;
-    private int noJour;
+  private int annee;
+  private int noJour;
 
+  public Jour(int annee, int noJour) {
+    this.annee = annee;
+    this.noJour = noJour;
+    }
     /**
      * Get the value of annee
      *
      * @return the value of annee
      */
-    public int getAnnee() {
-        return annee;
+  public int getAnnee() {
+    return annee;
     }
 
 
@@ -40,39 +44,34 @@ public class Jour {
      *
      * @return the value of noJour
      */
-    public int getNoJour() {
-        return noJour;
+  public int getNoJour() {
+    return noJour;
     }
 
-    public Jour(int annee, int noJour) {
-        this.annee = annee;
-        this.noJour = noJour;
+  @Override
+  public int hashCode() {
+    int hash = 7;
+    hash = 61 * hash + this.annee;
+    hash = 61 * hash + this.noJour;
+    return hash;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 61 * hash + this.annee;
-        hash = 61 * hash + this.noJour;
-        return hash;
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null) {
+        return false;
     }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Jour other = (Jour) obj;
-        if (this.annee != other.annee) {
-            return false;
-        }
-        if (this.noJour != other.noJour) {
-            return false;
-        }
-        return true;
+    if (getClass() != obj.getClass()) {
+        return false;
+    }
+    final Jour other = (Jour) obj;
+    if (this.annee != other.annee) {
+        return false;
+    }
+    if (this.noJour != other.noJour) {
+        return false;
+    }
+    return true;
     }
   
 }
