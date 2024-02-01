@@ -26,21 +26,11 @@ import java.util.Objects;
  */
 public class ActionComposee extends AbstractAction {
     // attribut lien
-    Map<ActionSimple, Float> mapPanier;
+  Map<ActionSimple, Float> mapPanier;
 
     @Override
-     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
-        }
-        if (!super.equals(obj)) {
-            return false;
-        }
-        ActionComposee that = (ActionComposee) obj;
-        return Objects.equals(mapPanier, that.mapPanier);
+    public boolean equals(Object obj) {
+        return super.equals(obj); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
     @Override
