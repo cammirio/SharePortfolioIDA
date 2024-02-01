@@ -59,7 +59,7 @@ public abstract class AbstractAction {
     if (!Objects.equals(this.libelle, other.libelle)) {
       return false;
       }
-      return true;
+    return true;
     }
 
   public String toString() {
