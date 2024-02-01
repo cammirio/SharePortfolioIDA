@@ -49,7 +49,7 @@ public class ActionTest {
       ActionSimple actionDifferent = new ActionSimple("AutreLibelle");
       assertEquals(action1,action1);
       assertEquals(action1,action2);
-      assertFalse(action1.equals(actionDifferent));
+      assertNotEquals(action1,actionDifferent);
     }
     
 }
