@@ -59,9 +59,9 @@ public class ActionSimple extends AbstractAction {
     return super.equals(obj);
   }
 
-    @Override
-    public int hashCode() {
-        return super.hashCode();
+  @Override
+  public int hashCode() {
+    return super.hashCode();
     }
   
   
