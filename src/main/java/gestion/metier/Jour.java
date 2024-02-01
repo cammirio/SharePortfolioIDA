@@ -59,17 +59,17 @@ public class Jour {
   @Override
   public boolean equals(Object obj) {
     if (obj == null) {
-        return false;
+      return false;
     }
     if (getClass() != obj.getClass()) {
-        return false;
+      return false;
     }
     final Jour other = (Jour) obj;
     if (this.annee != other.annee) {
-        return false;
+      return false;
     }
     if (this.noJour != other.noJour) {
-        return false;
+      return false;
     }
     return true;
     }

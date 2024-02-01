@@ -27,19 +27,25 @@ public class JourTest {
   private Jour j2 = new Jour(2024, 2);
     
   @Test
+  // S'assurer que les méthodes getAnnee() et getNoJour() renvoient les valeurs attendues.
   public void testAnneeJour() {
+    // Assert
     assertEquals(2024, j.getAnnee());
     assertEquals(2, j.getNoJour());
   }
     
   @Test
+  // Vérifier que la méthode equals() fonctionne correctement.
   public void testEquals() {
-    // Créer deux objets Jour égaux
+    // Arrange
     Jour jourDifferent = new Jour(2023, 2);
+    
+    // Assert
     assertEquals(j,j);
     assertEquals(j,j2);
     assertNotEquals(j,jourDifferent);
     assertNotEquals(j,"2024-02-01");
     assertNotNull(j);
     }
+  
 }
