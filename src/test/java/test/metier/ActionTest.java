@@ -59,7 +59,7 @@ public class ActionTest {
       // Assert
       assertEquals(action1,action1);
       assertEquals(action1,action2);
-      assertFalse(action1.equals(actionDifferent));
+      assertNotEquals(action1,actionDifferent);
     }
     
 }
