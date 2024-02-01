@@ -22,6 +22,7 @@ import gestion.metier.ActionComposee;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
 
 
@@ -80,6 +81,8 @@ public class PortefeuilleTest {
     assertEquals(9, portefeuille.getQte(action));
     float valeurAttendue = 9 * prixDuJour;
     assertEquals(valeurAttendue, portefeuille.valeur(jour));
+    // Act & Assert : Essayer de vendre plus que la quantité disponible doit lancer une exception
+    assertThrows(IllegalStateException.class, () -> portefeuille.vendre(action, 11));
     }
    @Test
     public void testIntegerToString() {
