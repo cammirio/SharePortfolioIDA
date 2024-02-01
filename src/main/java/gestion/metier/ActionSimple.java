@@ -58,8 +58,12 @@ public class ActionSimple extends AbstractAction {
   public boolean equals(Object obj) {
     return super.equals(obj);
   }
-    
-    
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+  
   
   // encapsulation de la définition de la classe Cours
   private static class Cours {
