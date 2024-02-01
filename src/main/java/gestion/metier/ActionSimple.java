@@ -36,7 +36,7 @@ public class ActionSimple extends AbstractAction {
     this.mapCours = new HashMap();
     }
     
-    // enrg possible si pas de cours pour ce jour
+    // enregistrement de l'action simple si pas de cours pour ce jour
   public void enrgCours(Jour j, float v) {
     if(this.mapCours.containsKey(j) == false){
       this.mapCours.put(j, new Cours(j, v));
