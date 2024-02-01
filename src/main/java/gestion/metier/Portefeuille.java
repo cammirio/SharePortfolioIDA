@@ -31,7 +31,17 @@ public class Portefeuille {
     private AbstractAction action;
         
     private int qte;
-        
+    
+    /**
+     * Permet d'instancier une action avec une quantité dans un portefeuille
+     *
+     * @return
+     */
+    public LignePortefeuille(AbstractAction action, int qte) {
+      this.action = action;
+      this.qte = qte;
+    }
+    
     /**
      * Permet d'avoir la quantité d'une action
      *
@@ -59,15 +69,6 @@ public class Portefeuille {
       return this.action;
     }
         
-    /**
-     * Permet d'instancier une action avec une quantité dans un portefeuille
-     *
-     * @return
-     */
-    public LignePortefeuille(AbstractAction action, int qte) {
-      this.action = action;
-      this.qte = qte;
-    }
 
     /**
      * Permet de passer la quantité instanciée d'entier à string
@@ -83,7 +84,7 @@ public class Portefeuille {
      *
      * @return
      */
-    public Portefeuille() {
+  public Portefeuille() {
       this.mapLignes = new HashMap();
     }
     
@@ -92,11 +93,12 @@ public class Portefeuille {
      *
      * @return
      */
-    public void acheter(AbstractAction a, int q) {
-      if (this.mapLignes.containsKey(a) == false) {
-        this.mapLignes.put(a, new LignePortefeuille(a, q));
-      } else {
-        this.mapLignes.get(a).setQte(this.mapLignes.get(a).getQte() + q);
+  public void acheter(AbstractAction a, int q) {
+    if (this.mapLignes.containsKey(a) == false) {
+      this.mapLignes.put(a, new LignePortefeuille(a, q));
+    } 
+    else {
+      this.mapLignes.get(a).setQte(this.mapLignes.get(a).getQte() + q);
         }
     }
 
@@ -105,28 +107,30 @@ public class Portefeuille {
      *
      * @return
      */
-    public void vendre(AbstractAction a, int q) {
-      if (this.mapLignes.containsKey(a) == true) {
-          if (this.mapLignes.get(a).getQte() > q) {
-              this.mapLignes.get(a).setQte(this.mapLignes.get(a).getQte() - q);
-            } else if (this.mapLignes.get(a).getQte() == q) {
-                this.mapLignes.remove(a);
-            }else {
-              throw new IllegalStateException();
+  public void vendre(AbstractAction a, int q) {
+    if (this.mapLignes.containsKey(a) == true) {
+      if (this.mapLignes.get(a).getQte() > q) {
+        this.mapLignes.get(a).setQte(this.mapLignes.get(a).getQte() - q);
+      } 
+      else if (this.mapLignes.get(a).getQte() == q) {
+        this.mapLignes.remove(a);
+      }
+      else {
+        throw new IllegalStateException();
             }
         }        
     }
     
-    public String toString() {
-      return this.mapLignes.toString();
+  public String toString() {
+    return this.mapLignes.toString();
     }
     
-    public int getQte(AbstractAction a) {
-      return this.mapLignes.get(a).getQte();
+  public int getQte(AbstractAction a) {
+    return this.mapLignes.get(a).getQte();
     }
 
-    public LignePortefeuille getAction(AbstractAction a){
-      return this.mapLignes.get(a);
+  public LignePortefeuille getAction(AbstractAction a){
+    return this.mapLignes.get(a);
     }
   
     /**
@@ -134,11 +138,11 @@ public class Portefeuille {
      *
      * @return la valeur totale
      */
-    public double valeur(Jour j) {
-      double total = 0;
-      for (LignePortefeuille lp : this.mapLignes.values()) {
-          total = total + (lp.getQte() * lp.getAction().valeur(j));
+  public double valeur(Jour j) {
+    double total = 0;
+    for (LignePortefeuille lp : this.mapLignes.values()) {
+      total = total + (lp.getQte() * lp.getAction().valeur(j));
         }
-      return total;
+    return total;
     }
 }
