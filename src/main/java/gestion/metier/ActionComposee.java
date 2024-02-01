@@ -28,43 +28,43 @@ public class ActionComposee extends AbstractAction {
     // attribut lien
   Map<ActionSimple, Float> mapPanier;
 
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+  @Override
+  public boolean equals(Object obj) {
+    return super.equals(obj); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 41 * hash + Objects.hashCode(this.mapPanier);
-        return hash;
+  @Override
+  public int hashCode() {
+    int hash = 7;
+    hash = 41 * hash + Objects.hashCode(this.mapPanier);
+    return hash;
     }
     
 
   
-    public ActionComposee(String libelle) {
-      super(libelle);
-      this.mapPanier = new HashMap();
+  public ActionComposee(String libelle) {
+    super(libelle);
+    this.mapPanier = new HashMap();
     }
     
-    public void enrgComposition(ActionSimple as, float pourcentage) {
-      this.mapPanier.put(as, pourcentage);
+  public void enrgComposition(ActionSimple as, float pourcentage) {
+    this.mapPanier.put(as, pourcentage);
     }
     
    
 
-    @Override
-    public double valeur(Jour j) {
-      double valeur;   
-      valeur = 0;
-      for(ActionSimple as : this.mapPanier.keySet()) {
-        valeur = valeur + (as.valeur(j) * this.mapPanier.get(as));
+  @Override
+  public double valeur(Jour j) {
+    double valeur;   
+    valeur = 0;
+    for(ActionSimple as : this.mapPanier.keySet()) {
+      valeur = valeur + (as.valeur(j) * this.mapPanier.get(as));
       } 
-      return valeur;
+    return valeur;
     }
     
-    public Map<ActionSimple, Float> getMapPanier() {
-      return this.mapPanier;
+  public Map<ActionSimple, Float> getMapPanier() {
+    return this.mapPanier;
     }
     
 
