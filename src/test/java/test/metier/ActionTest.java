@@ -29,24 +29,34 @@ public class ActionTest {
      * Test of getLibelle method, of class Action.
      */
     @Test
+    // Vérifier que la méthode getLibelle() renvoie le libellé correct.
     public void testGetLibelle() {
+      // Arrange
       ActionSimple action1 = new ActionSimple("Action 1");
+      // Assert
       assertEquals("Action 1", action1.getLibelle());
     }
         // TODO review the generated test code and remove the default call to fail.
        
     @Test
+    // Vérifier que la méthode toString() renvoie bien le string
     public void testToString() {
+      // Arrange
       ActionSimple action1 = new ActionSimple("Action 1");
+      // Assert
       assertEquals("Action 1", action1.toString());
     }
     
     @Test
+    // Vérifier que la méthode equals() fonctionne correctement.
     public void testEquals() {
+      // Arrange
       ActionSimple action1 = new ActionSimple("Test Action");
       ActionSimple action2 = new ActionSimple("Test Action");
-
+      
       ActionSimple actionDifferent = new ActionSimple("AutreLibelle");
+      
+      // Assert
       assertEquals(action1,action1);
       assertEquals(action1,action2);
       assertNotEquals(action1,actionDifferent);
