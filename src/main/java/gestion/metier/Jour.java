@@ -29,21 +29,17 @@ public class Jour {
     this.annee = annee;
     this.noJour = noJour;
     }
-    /**
-     * Permet d'avoir la valeur de l'année
-     *
-     * @return la valeur de l'année
-     */
+   
+    //Permet d'avoir la valeur de l'année
+    //Retourne la valeur de l'année
   public int getAnnee() {
     return annee;
     }
 
 
-    /**
-     * Permet d'avoir la valeur du jour
-     *
-     * @return la valeur du jour
-     */
+
+    //Permet d'avoir la valeur du jour
+    //Retourne la valeur du jour
   public int getNoJour() {
     return noJour;
     }

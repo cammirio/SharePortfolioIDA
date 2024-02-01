@@ -15,12 +15,10 @@
  */
 package test.metier;
 import gestion.metier.ActionSimple;
-import java.util.Map;
 import gestion.metier.ActionComposee;
 import gestion.metier.Jour;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 /**

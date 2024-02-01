@@ -32,67 +32,42 @@ public class Portefeuille {
         
     private int qte;
     
-    /**
-     * Permet d'instancier une action avec une quantité dans un portefeuille
-     *
-     * @return
-     */
+    //Permet d'instancier une action avec une quantité dans un portefeuille
     public LignePortefeuille(AbstractAction action, int qte) {
       this.action = action;
       this.qte = qte;
     }
     
-    /**
-     * Permet d'avoir la quantité d'une action
-     *
-     * @return la quantité d'une action
-     */
+    //Permet d'avoir la quantité d'une action
+    //Retourne la quantité d'une action
     public int getQte() {
       return qte;
     }
         
-    /**
-     * Permet de modifier la quantité d'une action
-     *
-     * @return la valeur modifiée de la quantité d'une action
-     */
+    //Permet de modifier la quantité d'une action
+    //Retourne la valeur modifiée de la quantité d'une action
     public void setQte(int qte) {
       this.qte = qte;
     }
         
-    /**
-     * Permet de récupérer une action
-     *
-     * @return l'action
-     */
+    //Permet de récupérer une action
     public AbstractAction getAction() {
       return this.action;
     }
         
 
-    /**
-     * Permet de passer la quantité instanciée d'entier à string
-     *
-     * @return la valeur de la quantité en chaîne de cracatère
-     */
+    //Permet de passer la quantité instanciée d'entier à string
+    //Retourne la valeur de la quantité en chaîne de caractère
     public String toString() {
       return Integer.toString(qte);
     }
 }
-    /**
-     * Permet de stocker des lignes d'actions dans un portefeuille
-     *
-     * @return
-     */
+  //Permet de stocker des lignes d'actions dans un portefeuille
   public Portefeuille() {
       this.mapLignes = new HashMap();
     }
     
-    /**
-     * Permet d'acheter une action
-     *
-     * @return
-     */
+  //Permet d'acheter une action
   public void acheter(AbstractAction a, int q) {
     if (this.mapLignes.containsKey(a) == false) {
       this.mapLignes.put(a, new LignePortefeuille(a, q));
@@ -102,11 +77,7 @@ public class Portefeuille {
         }
     }
 
-    /**
-     * Permet de vendre une action
-     *
-     * @return
-     */
+    //Permet de vendre une action
   public void vendre(AbstractAction a, int q) {
     if (this.mapLignes.containsKey(a) == true) {
       if (this.mapLignes.get(a).getQte() > q) {
@@ -133,11 +104,8 @@ public class Portefeuille {
     return this.mapLignes.get(a);
     }
   
-    /**
-     * Permet de calculer la valeur totale du portfeuille
-     *
-     * @return la valeur totale
-     */
+    //Permet de calculer la valeur totale du portfeuille
+    //Retourne la valeur totale
   public double valeur(Jour j) {
     double total = 0;
     for (LignePortefeuille lp : this.mapLignes.values()) {

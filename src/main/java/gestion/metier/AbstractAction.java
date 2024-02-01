@@ -29,11 +29,8 @@ public abstract class AbstractAction {
     this.libelle = libelle;
     }
 
-    /**
-     * Permet de récupérer la valeur du libellé
-     *
-     * @return la valeur du libellé
-     */
+    //Permet de récupérer la valeur du libellé
+    //Retourne la valeur du libellé
   public String getLibelle() {
     return libelle;
     }
@@ -41,11 +38,9 @@ public abstract class AbstractAction {
   public abstract double valeur(Jour j);
     
 
-  /**
-  * Permet de faire un code hashage
-  *
-  * @return la valeur du hashCode
-  */
+  
+  //Permet de faire un code hashage
+  //Retourne la valeur du hashCode
   @Override
    
   public int hashCode() {
@@ -54,11 +49,8 @@ public abstract class AbstractAction {
     return hash;
     }
 
-   /**
-   * Comparaison de deux objets afin de savoir si ils sont égaux
-   *
-   * @return la true si égal, false sinon
-   */
+   //Comparaison de deux objets afin de savoir si ils sont égaux
+   //Retourne la true si égal, false sinon
   @Override
      
   public boolean equals(Object obj) {
@@ -76,11 +68,9 @@ public abstract class AbstractAction {
     return true;
     }
 
-    /**
-     * Permet de mettre le libellé sous chaîne de caractère
-     *
-     * @return la chaîne de caractère du libellé
-     */
+    
+    //Permet de mettre le libellé sous chaîne de caractère
+    //Retourne la chaîne de caractère du libellé
   public String toString() {
     return this.getLibelle();
 
