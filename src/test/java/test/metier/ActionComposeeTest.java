@@ -36,16 +36,17 @@ public class ActionComposeeTest {
   private final Jour j2 = new Jour(2014, 2);
     
   @Test
+  // S'assurer que la méthode getMapPanier() renvoie la composition correcte du portefeuille.
   public void testGetMapPanier(){
-    //Enregistrement de la composition de l'action composée
+    // Arrange
     bqAss.enrgComposition(axa, 0.5f);
     bqAss.enrgComposition(bnp, 0.4f);
     bqAss.enrgComposition(lcl, 0.1f);
         
-    // Récupération de la composition d'une action composée
+    // Action
     Map<ActionSimple, Float> composition = bqAss.getMapPanier();
         
-    // Assertions pour vérifier que la composition contient les éléments attendus
+    // Assert
     assertTrue(composition.containsKey(axa));
     assertEquals(0.5f, composition.get(axa), 0.001f); 
     assertTrue(composition.containsKey(bnp));
@@ -55,12 +56,17 @@ public class ActionComposeeTest {
     }
     
     @Test
+    //  Vérifier que la méthode getLibelle() renvoie le libellé correct.
     public void testGetlibelle(){
+    // Assert
       assertEquals("Banque-Assurance", bqAss.getLibelle());
     }
     
     @Test
+    // S'assurer que la méthode Valeur() calcule correctement la valeur du portefeuille à une date donnée.
     public void testValeur(){ 
+    
+    // Action
       bqAss.enrgComposition(axa, 0.5f);
       bqAss.enrgComposition(bnp, 0.4f);
       bqAss.enrgComposition(lcl, 0.1f);
@@ -70,7 +76,8 @@ public class ActionComposeeTest {
       bnp.enrgCours(j1, 100);
       bnp.enrgCours(j2, 200);
       lcl.enrgCours(j1, 300);
-      // affichage des cours - comme 1 action simple et 1 action
+      
+      // Assert
       assertEquals(170,bqAss.valeur(j1),0.001f);
         
         

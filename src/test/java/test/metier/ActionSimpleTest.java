@@ -27,6 +27,7 @@ import org.junit.jupiter.api.Test;
 public class ActionSimpleTest {
     
    @Test
+   // Evaluer la fonctionnalité de calcul de la valeur d'une action à une date donnée
     public void testValeur() {
         // Arrange
         ActionSimple action = new ActionSimple("TestAction");
@@ -36,7 +37,7 @@ public class ActionSimpleTest {
         // Enregistrer un cours pour le jour avec cours
         action.enrgCours(jourAvecCours, 50.0f);
 
-        // Act
+        // Action
         double valeurAvecCours = action.valeur(jourAvecCours);
         double valeurSansCours = action.valeur(jourSansCours);
 
