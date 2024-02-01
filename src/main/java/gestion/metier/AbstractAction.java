@@ -22,12 +22,11 @@ import java.util.Objects;
  *
  * @author perussel
  */
-public abstract class AbstractAction 
-{
+public abstract class AbstractAction {
   private final String libelle;
   
   protected AbstractAction(String libelle) {
-      this.libelle = libelle;
+    this.libelle = libelle;
     }
 
     /**
@@ -35,42 +34,46 @@ public abstract class AbstractAction
      *
      * @return la valeur du libellé
      */
-    public String getLibelle() {
-      return libelle;
+  public String getLibelle() {
+    return libelle;
     }
 
-    public abstract double valeur(Jour j);
+  public abstract double valeur(Jour j);
     
-    /**
-     * Permet de faire un code hashage
-     *
-     * @return la valeur du hashCode
-     */
-    @Override
-    public int hashCode() {
-      int hash = 3;
-      hash = 53 * hash + Objects.hashCode(this.libelle);
-      return hash;
+
+  /**
+  * Permet de faire un code hashage
+  *
+  * @return la valeur du hashCode
+  */
+  @Override
+   
+  public int hashCode() {
+    var hash = 3;
+    hash = 53 * hash + Objects.hashCode(this.libelle);
+    return hash;
     }
 
-    /**
-     * Comparaison de deux objets afin de savoir si ils sont égaux
-     *
-     * @return la true si égal, false sinon
-     */
-    @Override
-    public boolean equals(Object obj) {
-      if (obj == null) {
-        return false;
+   /**
+   * Comparaison de deux objets afin de savoir si ils sont égaux
+   *
+   * @return la true si égal, false sinon
+   */
+  @Override
+     
+  public boolean equals(Object obj) {
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    final AbstractAction other = (AbstractAction) obj;
+    if (!Objects.equals(this.libelle, other.libelle)) {
+      return false;
+
       }
-      if (getClass() != obj.getClass()) {
-        return false;
-      }
-      final AbstractAction other = (AbstractAction) obj;
-      if (!Objects.equals(this.libelle, other.libelle)) {
-        return false;
-      }
-        return true;
+    return true;
     }
 
     /**
@@ -80,5 +83,6 @@ public abstract class AbstractAction
      */
     public String toString() {
       return this.getLibelle();
+
     }
 }

@@ -18,6 +18,7 @@ package gestion.metier;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  *
@@ -25,7 +26,20 @@ import java.util.Map;
  */
 public class ActionComposee extends AbstractAction {
     // attribut lien
-    Map<ActionSimple, Float> mapPanier;
+  Map<ActionSimple, Float> mapPanier;
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 41 * hash + Objects.hashCode(this.mapPanier);
+        return hash;
+    }
+    
 
   
     /**
